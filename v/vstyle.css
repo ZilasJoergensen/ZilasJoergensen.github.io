@@ -382,7 +382,7 @@ body{
 }
 
 .heart-button:active {
-    transform: scale(1.2);
+    transform: scale(1.2); 
 }
 .heart-button.liked {
     color: #e84118;
