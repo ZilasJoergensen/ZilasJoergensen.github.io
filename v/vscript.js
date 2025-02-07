@@ -28,7 +28,7 @@ function displayLetter() {
   let letter = document.getElementById('letterId');
   let introText = document.createElement("div");
   introText.id = "introText";
-  introText.innerHTML = "<span>Hey Emi, I have question for you...</span>";
+  introText.innerHTML = "<span>Hey Emi, I have question for you... </span>";
   introText.style.position = "absolute";
   introText.style.top = "50%";
   introText.style.left = "50%";
