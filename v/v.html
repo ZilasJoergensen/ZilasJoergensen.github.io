@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Emi</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="vstyle.css" />
+    <link rel="shortcut icon" href="imgs/heart-logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="loadingCon">
+      <div class="icon_demo">
+        <svg class="heart-main" viewBox="0 0 512 512" width="100" title="heart">
+          <path
+            d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+          />
+        </svg>
+        <svg
+          class="heart-background"
+          viewBox="0 0 512 512"
+          width="100"
+          title="heart"
+        >
+          <path
+            d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+          />
+        </svg>
+      </div>
+    </div>
+    
+    <main id="mainCon">
+      <audio id="player" autoplay muted loop>
+        <source src="song.mp3" type="audio/mp3">
+      </audio>
+      <button id="heartButton" class="heart-button" onclick="unmuteAudio()">
+        <i class="fas fa-heart">Click for music</i>
+      </button>
+      <div onclick="openEnvi()" id="envelope" class="close">
+        <div class="front flap"></div>
+        <div class="front pocket"></div>
+        <div class="letter" id="letterId">
+            <div id="letterTextCon">
+                <div class="imgConGift">
+                    <img id="gifImg" src="imgs/bear-kiss-bear-kisses.gif" alt="">
+                </div>
+                <div class="questionText">
+                    <span>Will you be my valentine?</span>
+                </div>
+                <div class="buttonCon">
+                    <button onclick="yesMie()" id="yesButton">Yes</button>
+                    <button onclick="noMie()" id="noButton">No</button>
+                </div>
+            </div>
+        </div>
+        <div class="hearts">
+          <div class="heart a1"></div>
+          <div class="heart a2"></div>
+          <div class="heart a3"></div>
+        </div>
+        <div class="textOpen">
+            <span>Please click the envelop to open!</span>
+        </div>
+      </div>
+    </main>
+    <script src="vscript.js"></script>
+  </body>
+</html>
