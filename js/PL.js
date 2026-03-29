@@ -1,9 +1,39 @@
-const right = document.querySelectorAll('.right');
-const left = document.querySelectorAll('.left');
-const desc = document.querySelectorAll('.desc');
+const pageTitle = document.querySelector("#ProjectsListTitle");
+const projectCards = document.querySelectorAll(".project");
+const goTopLink = document.querySelector("#goTopLink");
 
-const tl = new TimelineMax(); 
+if (typeof TimelineMax !== "undefined") {
+	const tl = new TimelineMax();
 
-tl.fromTo(right, 1, {marginRight: "700px"}, {marginRight: "0px", ease: Power2.easeInOut})
-.fromTo(left, 1, {marginLeft: "700px"}, {marginLeft: "0px", ease: Power2.easeInOut}, "-=1")
-.fromTo(desc, 1, {opacity: "0"}, {opacity: 1, ease: Power2.easeInOut});
+	if (pageTitle) {
+		tl.fromTo(
+			pageTitle,
+			0.65,
+			{ autoAlpha: 0, y: -24 },
+			{ autoAlpha: 1, y: 0, ease: Power2.easeOut }
+		);
+	}
+
+	if (projectCards.length > 0) {
+		tl.staggerFromTo(
+			projectCards,
+			0.85,
+			{ autoAlpha: 0, y: 48 },
+			{ autoAlpha: 1, y: 0, ease: Power2.easeOut },
+			0.16,
+			pageTitle ? "-=0.2" : 0
+		);
+	}
+}
+
+if (goTopLink) {
+	goTopLink.addEventListener("click", (event) => {
+		event.preventDefault();
+		window.scrollTo({ top: 0, behavior: "smooth" });
+
+		if (window.history && window.history.replaceState) {
+			const cleanUrl = `${window.location.pathname}${window.location.search}`;
+			window.history.replaceState(null, "", cleanUrl);
+		}
+	});
+}
